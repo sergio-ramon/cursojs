@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+</head>
+<body>
+    <h1>Verificação de nacionalidade</h1>
+
+    <abbr title="Escolha a naturalidade">
+        <select name="natur" id="natur">
+            <option value="br">Brasileiro</option>
+            <option value="amr">Americano</option>
+            <option value="asi">Asiático</option>
+            <option value="eur">Europeu</option>
+        </select>
+    </abbr>
+
+    <input type="button" value="Enviar" id="bt">
+
+    <div id="res"></div>
+
+    <script>
+        bt = document.getElementById('bt')
+        bt.addEventListener('click', verificar)
+
+        function verificar(){
+            var nat = document.getElementById('natur').value
+            res = document.getElementById('res')
+
+            if(nat == 'br') {
+                res.innerHTML = `<p>Você é Brasileiro!</p>`
+            }
+            else {
+                res.innerHTML = `<p>Você é Estrangeiro!</p>`
+            }
+        }
+    </script>
+</body>
+</html>
